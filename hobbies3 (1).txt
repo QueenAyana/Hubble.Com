@@ -1,0 +1,61 @@
+const personalityCore = ["Adventurous", "Mellow", "Reliable", "Thoughtful", "Charismatic", "Rational", "Social"];
+const personalityAddOn = ["Action Taker", "Inventor", "Naturalist", "Visionary", "Analyzer", "Mentor", "Planner"];
+
+
+INFJ
+INFJs definitely do enjoy their hobbies even if they don�t share them with others. 
+They might have certain hobbies that appear more introverted, such as playing online games or writing fiction stores. Whatever their important hobbies are, 
+INFJs often gain a lot from the time spent enjoying them. They often cherish having hobbies that allow them the chance to spend time by themselves, just immersed in their own thoughts 
+and feelings. There are some hobbies though that the INFJ might enjoy sharing with someone special, and they find it exciting to have someone who understands this side of them.
+
+ENFJ
+ENFJs do find it difficult to maintain their hobbies sometimes, since they are somewhat busy people. They find themselves taking on the tasks and responsibilities of those around them, leaving little room for themselves. ENFJs do often enjoy taking on new hobbies though, especially ones they can share with the people close to them. Having something to challenge themselves and keep them entertained is certainly enjoyable for the ENFJ. They do find themselves taking interest in their loved ones hobbies, simply as a way to connect with them on something they enjoy.
+
+INFP
+INFPs often enjoy being able to explore new hobbies, but often take their more private ones very seriously. Whether it be music, writing or simply reading- INFPs enjoy the time spent by themselves just diving into their passions. They do often become very invested in their hobbies and seek to gain a lot from these experiences. INFPs only feel comfortable sharing their hobbies with people who they trust and feel safe with. Many of their hobbies can include self-expression or forms of art, which can leave the INFP feeling vulnerable if they share this with others.
+
+ENFP
+ENFPs do find hobbies to be very important and often find themselves diving into new ones. They enjoy being able to challenge themselves and gain new experiences constantly. ENFPs don�t like being stagnant and often doing the same thing over and over again can cause this. Because of this desire to experience new and excited things, the ENFP will likely want to find new hobbies just to try them and see how it feels. Whether it be gaming, reading, or even things like hiking- ENFPs enjoy diving head first into their hobbies so that they can get the most out of them.
+
+ 
+
+INTJ
+INTJs often do have hobbies that they enjoy being able to dive into, but they prefer things that challenge them. For the INTJ many of their hobbies are experiences that help them grow and learn in many ways. For INTJs simply taking part in something that does not push them, won�t leave them feeling accomplished or passionate about the experience. Research and reading are some of the most valuable things for INTJs, and are certainly considered hobbies that they enjoy. While they might seem like serious people, INTJ do often enjoy more artistic and creative hobbies as well, things such as writing or even gaming.
+
+ENTJ
+ENTJs do enjoy having certain hobbies, but at the same time they want to feel like they are being productive in some way. ENTJs are focused people who are constantly pushing themselves forward in their lives. They dislike feeling stagnant or like they aren�t accomplishing something of value. ENTJs might have hobbies that seem unusual to some people, since they expect experiences that are more relaxed and less challenging. ENTJs simply want to be able to remain focused on what is important and enjoy things that are meaningful.
+
+INTP
+INTPs do believe that their hobbies are very important, and enjoy being able to experience new things. Many of their hobbies are things they can enjoy on their own time without having to be around others. INTPs need plenty of time to themselves and many of their hobbies give them an excuse to spend time inside of their own inner minds. The INTP also despises being stagnant for too long and trying a new and exciting hobby can really help get them out of a rut.
+
+
+ENTP
+ENTPs definitely do value their hobbies very much, but they often have many of them. They are constantly trying new hobbies and diving into experiences that might seem a bit odd to others. ENTPs simply dislike remaining stagnant and so they enjoy finding new and unique hobbies in order to challenge themselves. ENTPs can become bored rather easily by doing the same thing over and over again, which is why projects and hobbies can be a great way for them to experience new things.
+
+ 
+
+ISTJ
+ISTJs definitely do value their hobbies, especially the ones that give them time to themselves. ISTJs are hardworking and focused individuals, which often forces them into more social situations than they prefer. When the ISTJ has certain hobbies that allow them plenty of time alone, it can really be rewarding for them. Whether it be reading, gaming, or watching their favorite sporting events, being able to just think and be alone is a nice experience for them.
+
+ESTJ
+ESTJs are often focused and driven people, which leaves them more interested in somewhat relaxed hobbies. They are constantly pushing themselves to grow and improve their lives, which can leave the ESTJ feeling a bit drained after a long day. Kicking back and watching TV, or going shopping with their loved ones are both enjoyable options for the ESTJ. Spending time with their favorite people is actually a great way to unwind and relax after a long day.
+
+ISFJ
+ISFJs definitely do enjoy their hobbies, and often have many different interests. ISFJs can spend so much energy caring for others that they rarely find time for themselves. Having hobbies that they can enjoy by themselves or with one special person, can help the ISFJ recharge and feel more energized for the next day. ISFJs might enjoy cooking, reading, crafts or watching their favorite television shows, but all of these activities are things they want to be skilled at. ISFJs are very supportive of their loved ones hobbies, and enjoy when people can support their personal experiences as well.
+
+ESFJ
+ESFJs often do have many hobbies, but it can be difficult for them to find time to engage in them. They are so focused on caring for others and doing things for them, that they can neglect their own needs. ESFJs might enjoy writing, reading, cooking or even gaming in their spare time. ESFJs often have unique hobbies and in some cases find themselves interested in things they struggle to admit to others. They simply like being able to express themselves and find activities that they are truly passionate about. Having people they can share these hobbies with is actually very fulfilling for the ESFJ, especially people who they care deeply for.
+
+ 
+
+ISTP
+ISTPs do have many hobbies and often enjoy ones they can experience alone. Having a chance to spend this time by themselves can help the ISTP recharge and gain new experiences. They often like being able to participate in hobbies that are a bit more exciting and even adventurous. ISTPs might like things like boxing, hiking, sports, gaming or even more daring things like parkour. For the ISTP it is about experiencing the moment and living their lives to the fullest.
+
+ESTP
+ESTPs often have many hobbies, but they can find themselves hopping around to different things. They dislike remaining stuck in one place for too long and want to live in the present moment. ESTPs might find something that catches their attention and they will want to dive into this head first. They do enjoy having loved ones who are willing to experience their hobbies and new activities with the ESTP.
+
+ISFP
+ISFPs do often enjoy their hobbies, and have many different things they like being ale to dive into. They often have an artistic side and might enjoy drawing, painting or even music. ISFPs love being able to experience new things, and are drawn to aesthetic beauty. They like having this time to themselves to just allow their minds to wander and process different thoughts and feelings. For ISFPs hobbies can be something they share with a loved one, but it can also be a way to enjoy time to themselves.
+
+ESFP
+ESFPs often have many hobbies, and enjoy being able to share them with others. They might enjoy art, music, shopping or even travelling. For ESFPs hobbies are a great way to experience news and push themselves outside of their comfort zones. They dislike remaining stagnant for too long, and taking on a new hobby can be a great way to avoid this stuck feeling. ESFPs are adventurous people, and might want to take their loved ones along on their different adventures and hobby seeking.

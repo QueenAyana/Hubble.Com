@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
     Button,
     Modal,
     ModalHeader,
     ModalBody,
     ModalFooter, InputGroup, InputGroupAddon, Input
 } from 'reactstrap';
-import { FaUser } from 'react-icons/fa';
 
 const SignUp = (props) =>
     <div>
