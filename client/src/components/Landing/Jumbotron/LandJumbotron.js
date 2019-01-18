@@ -1,0 +1,19 @@
+import React from "react"
+import { Container, Row, Col, Jumbotron } from "reactstrap";
+
+const LandJumbotron = () => (
+  <Container>
+    <Row>
+      <Col>
+        <Jumbotron className="LndJmbo">
+          <h1>Welcome to Hubble.Com!</h1>
+          <hr className="my-2" />
+          <h3>Where we help you expand your bubble to fit a new hobby!</h3>
+          <p>Just take our amazing personality test so we can match who you are on the inside to what you can do on the outside</p>
+        </Jumbotron>
+      </Col>
+    </Row>
+  </Container>
+);
+
+export default LandJumbotron;

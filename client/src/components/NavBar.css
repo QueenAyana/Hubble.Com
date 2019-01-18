@@ -1,0 +1,12 @@
+.user-info *{
+    float: left;
+}
+.user-info p{
+    font-size: 18pt;
+    margin-right: 1em;
+}
+.user-info svg{
+font-size: 20pt;
+margin-top: 6px;
+margin-right: .3em;
+}

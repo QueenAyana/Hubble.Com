@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: 
+  linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+  linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+  linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+  linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+  linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+  linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313 !important;
+  background-size: 20px 20px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.jumbotron{
+  clear: both;
+  margin-top: 2rem; 
+  text-Align: center;
+  color: red;
+  background-image : url(https://i.pinimg.com/736x/d8/d4/27/d8d42723be99f121df80b5be991c81e1--light-wood-texture-wood-grain-texture.jpg);
+  font-family: cursive;
+  font-size: 14pt
+}
+
+.nav{
+  color: red;
+  background-image : url(https://i.pinimg.com/736x/d8/d4/27/d8d42723be99f121df80b5be991c81e1--light-wood-texture-wood-grain-texture.jpg);
+}
+
+.navbar-brand{
+  font-family: cursive !important;
+  color: red !important;
+  font-size: 22pt !important;
+  
+}
+
+.button{
+  background: 
+  linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+  linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+  linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+  linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+  linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+  linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313 !important;
+  background-size: 20px 20px;
+  margin-right: 25px
+}
+
+
+.LndJmbo{
+  height: 200% !important;
+}
+
+.modal-content{
+  color: red;
+  background-image : url(https://i.pinimg.com/736x/d8/d4/27/d8d42723be99f121df80b5be991c81e1--light-wood-texture-wood-grain-texture.jpg);
+}
+
+.psMdl{
+  text-align: center;
+  font-family: cursive;
+}
+.psMdlP{
+  color: #131313;
+  text-align: center;
+  font-family: 'Arnoldboecklin', fantasy;
+}
+
+.hobbyJmb{
+  color: #131313 !important;
+  font-size: 14pt
+}
+.hobbyJmbo{
+  color: #131313 !important;
+}
