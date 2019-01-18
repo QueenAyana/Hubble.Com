@@ -8,10 +8,6 @@ import {
     Nav,
     NavItem,
     Button,
-    Modal,
-    ModalHeader,
-    ModalBody,
-    ModalFooter
 } from 'reactstrap';
 import SignUp from './SignUpModal';
 import SignIn from './SignInModal';
@@ -29,7 +25,7 @@ class NavBar extends Component {
             email: "",
             first_name: "",
             last_name: "",
-            Zipcode:"",
+            zipcode:"",
             signUpModal: false,
             signInModal: false,
             signedUp: false
@@ -70,8 +66,8 @@ class NavBar extends Component {
         this.props.signOutUser();
     }
     signUp = () => {
-        const { username, email, password, first_name, last_name } = this.state
-        userAPI.createUser({ username, email, password, first_name, last_name }).then((res) => {
+        const { username, email, password, first_name, last_name, zipcode } = this.state
+        userAPI.createUser({ username, email, password, first_name, last_name, zipcode }).then((res) => {
             this.setState({ signedUp: true });
             setTimeout(() => {
                 this.toggleSignUpModal();

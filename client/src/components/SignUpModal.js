@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
     Button,
     Modal,
     ModalHeader,
     ModalBody,
     ModalFooter, InputGroup, InputGroupAddon, Input, Alert
 } from 'reactstrap';
-import { FaUser } from 'react-icons/fa';
 
 const SignUp = (props) =>
     <div>
@@ -47,7 +40,7 @@ const SignUp = (props) =>
                         </InputGroup>
                         <InputGroup>
                             <InputGroupAddon addonType="prepend">Zipcode:</InputGroupAddon>
-                            <Input placeholder="zipcode"  type="text" pattern="[0-9]*" name="zipcode" value={props.zipcode} onChange={props.inputHandler} />
+                            <Input placeholder="zipcode"  type="text" name="zipcode" value={props.zipcode} onChange={props.inputHandler} />
                         </InputGroup>
                     </div>}
             </ModalBody>

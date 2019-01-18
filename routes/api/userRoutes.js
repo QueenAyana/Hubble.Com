@@ -7,9 +7,16 @@ router
     .route('/create')
     .post(userController.createUser);
 
-router.route('/login',passport.authenticate('local'))
+router
+    .route('/login', passport.authenticate('local'))
     .post(userController.logInUser);
 
-router.route("/survey")
+router
+    .route("/personality")
+    .put(userController.savePersonality)
+
+router
+    .route("/hobbies")
+    .put(userController.saveHobbies)
 
 module.exports = router;

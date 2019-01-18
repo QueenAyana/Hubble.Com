@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import QuestionForm from "../../components/Questions";
 import userAPI from '../../utils/api/user';
-import { Button, Container, Row, Col, Jumbotron, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Button, Container, Row, Col, Jumbotron, Form } from "reactstrap";
 import Persona from '../../components/Survey';
 
 
@@ -12,22 +12,47 @@ let persona = personalityCore[Math.floor(Math.random() * personalityCore.length)
 class Survey extends Component {
 
     state = {
+        user: "",
         isOpen: false,
         personality: persona,
         personaModal: false,
     };
 
+    getSession = () => {
+        // Get saved data from localStorage
+        for (let key in this.state) {
+            if (localStorage.hasOwnProperty(key)) {
+                // get the key's value from localStorage
+                let value = localStorage.getItem(key);
+
+                // parse the localStorage string and setState
+                try {
+                    value = JSON.parse(value);
+                    this.setState({ 'user': value });
+                } catch (e) {
+                    // handle empty string
+                    this.setState({ [key]: value });
+                }
+            }
+        }
+    }
+
+
+    componentDidMount() {
+        this.getSession();
+    }
 
     givePersonality = (event) => {
         event.preventDefault();
         console.log(persona);
-        console.log(this.state.personality);
+        console.log(this.state.user._id);
         userAPI.savePersonality({
             personality: this.state.personality,
+            id: this.state.user._id,
         });
         this.togglePersonaModal();
     }
-    
+
     toggle = () => {
         this.setState({
             isOpen: !this.state.isOpen
