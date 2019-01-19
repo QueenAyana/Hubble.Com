@@ -8,10 +8,14 @@ require("dotenv").config();
 
 const hobbys = Hobbies.hobbies;
 let hobbyList = [];
-
 const APIkey = process.env.API_Key;
 let hobbylink = "";
-let URL = `https://api.meetup.com/find/groups?key=${APIkey}&sign=true&photo-host=public&zip=90274&fallback_suggestions=true&text=${hobbylink}&radius=25.0&page=20`;
+let groupRes = {
+  name: [],
+  link: [],
+  location: [],
+  description: []
+}
 
 
 class Profile extends Component {
@@ -22,21 +26,16 @@ class Profile extends Component {
       hobbies: hobbyList,
       meetUpModal: false,
       isOpen: false,
+      groupResp: groupRes
     };
   }
 
   componentDidMount() {
     this.getSession();
     this.getHobbies();
-    this.saveSession();
+    // this.saveSession();
   }
 
-  saveSession = () => {
-    // Save data to sessionStorage
-    for (let key in this.state) {
-      localStorage.setItem(key, JSON.stringify(this.state[key]));
-    }
-  }
   getSession = () => {
     // Get saved data from localStorage
     for (let key in this.state) {
@@ -81,6 +80,25 @@ class Profile extends Component {
     });
     console.log(this)
   }
+  apiCall = () => {
+    let queryURL = `https://api.meetup.com/find/groups?key=${APIkey}&sign=true&photo-host=public&zip=${this.state.user.zipcode}&fallback_suggestions=true&text=${hobbylink}&radius=25.0&page=5`;
+    fetch(queryURL)
+      .then(res => res.json())
+      .then((result) => {
+        for (let i = 0; i < result.length; i++) {
+          let name = result[i].data.name
+          let link = result[i].data.link
+          let location = result[i].data.localized_location
+          let description = result[i].data.description
+          //push into the arrays in the obj groupRes
+          name.push(groupRes.name)
+          link.push(groupRes.link)
+          location.push(groupRes.location)
+          description.push(groupRes.description)
+        }
+      });
+    this.togglemeetUpModal();
+  }
 
   render() {
     return (
@@ -117,7 +135,7 @@ class Profile extends Component {
                           name={hobby}>{hobby}
                         </th>
                         <th>
-                          <Button className="button" name={hobby} onClick={this.togglemeetUpModal}>Open Info</Button>
+                          <Button className="button" name={hobby} onClick={this.apiCall}>Open Info</Button>
                         </th>
                       </tr>
                     ))}
@@ -141,7 +159,7 @@ class Profile extends Component {
         </Container>
         <MeatUp
           modal={this.state.meetupModal}
-          hobbies={this.state.hobbies}
+          hobby={this.state.groupResp}
         />
       </div>
     );
