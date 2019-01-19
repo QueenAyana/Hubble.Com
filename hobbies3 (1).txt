@@ -59,3 +59,22 @@ ISFPs do often enjoy their hobbies, and have many different things they like bei
 
 ESFP
 ESFPs often have many hobbies, and enjoy being able to share them with others. They might enjoy art, music, shopping or even travelling. For ESFPs hobbies are a great way to experience news and push themselves outside of their comfort zones. They dislike remaining stagnant for too long, and taking on a new hobby can be a great way to avoid this stuck feeling. ESFPs are adventurous people, and might want to take their loved ones along on their different adventures and hobby seeking.
+
+
+
+
+
+
+
+
+                <ListGroup>
+                  {this.state.hobbies.map((hobby, index) => (
+                    <ListGroupItem
+                      key={index}
+                      tag="button"
+                      onclick={this.togglemeetUpModal}
+                      name={hobby}
+                      action>{hobby}
+                    </ListGroupItem>
+                  ))}
+                </ListGroup>

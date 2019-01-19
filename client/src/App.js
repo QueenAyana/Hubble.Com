@@ -41,7 +41,7 @@ class App extends Component {
     );
 
     // saves if component has a chance to unmount
-    this.saveSessions();
+    this.saveSession();
   }
 
   getSession = () => {

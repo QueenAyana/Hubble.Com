@@ -43,7 +43,7 @@ class userController {
     saveHobbies(req, res) {
         // find user loged in by id and
         db.User
-            .findOneAndUpdate({ _id: req.body.id }, {$set: {"hobbies":req.body.personality}})
+            .findOneAndUpdate({ _id: req.body.id }, {$set: {"hobbies":req.body.hobbies}})
             .then(
                 (results) => {
                     res.json(results);

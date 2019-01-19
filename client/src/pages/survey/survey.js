@@ -60,8 +60,7 @@ class Survey extends Component {
     }
     togglePersonaModal = () => {
         this.setState({
-            personaModal: !this.state.personaModal,
-            personality: "",
+            personaModal: !this.state.personaModal
         });
     }
 
