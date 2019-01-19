@@ -41,7 +41,7 @@ class App extends Component {
     );
 
     // saves if component has a chance to unmount
-    this.saveStateToLocalStorage();
+    this.saveSessions();
   }
 
   getSession = () => {
@@ -54,6 +54,7 @@ class App extends Component {
         // parse the localStorage string and setState
         try {
           value = JSON.parse(value);
+          this.setState({ 'signedIn': value });
           this.setState({ 'user': value });
         } catch (e) {
           // handle empty string

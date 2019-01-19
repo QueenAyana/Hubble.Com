@@ -31,6 +31,9 @@ class HomePage extends Component {
               <Link to={"/survey"}>
                 <Button className="button">Take the Survey!</Button>
               </Link>
+              <Link to={"/profile"}>
+                <Button className="button">Go to Your Page!</Button>
+              </Link>
             </Jumbotron>
           </Col>
         </Row>
