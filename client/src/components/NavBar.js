@@ -13,6 +13,7 @@ import SignUp from './SignUpModal';
 import SignIn from './SignInModal';
 import { FaUser } from 'react-icons/fa';
 import './NavBar.css';
+import { Link } from "react-router-dom";
 
 class NavBar extends Component {
     constructor(props) {
@@ -25,7 +26,7 @@ class NavBar extends Component {
             email: "",
             first_name: "",
             last_name: "",
-            zipcode:"",
+            zipcode: "",
             signUpModal: false,
             signInModal: false,
             signedUp: false
@@ -90,8 +91,10 @@ class NavBar extends Component {
                             <NavItem>
                                 {this.props.signedIn ?
                                     <div className="user-info">
-                                        <FaUser/><p>{this.props.user.username}</p>
-                                        <Button className="button" onClick={this.signOut}>Sign Out</Button>
+                                        <FaUser /><p>{this.props.user.username}</p>
+                                        <Link to={"/"}>
+                                            <Button className="button" onClick={this.signOut}>Sign Out</Button>
+                                        </Link>
                                     </div>
                                     :
                                     <div>

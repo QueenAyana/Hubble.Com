@@ -13,7 +13,7 @@ class Survey extends Component {
 
     state = {
         user: "",
-        isOpen: false,
+        // isOpen: false,
         personality: persona,
         personaModal: false,
     };
@@ -53,11 +53,11 @@ class Survey extends Component {
         this.togglePersonaModal();
     }
 
-    toggle = () => {
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
-    }
+    // toggle = () => {
+    //     this.setState({
+    //         isOpen: !this.state.isOpen
+    //     });
+    // }
     togglePersonaModal = () => {
         this.setState({
             personaModal: !this.state.personaModal
@@ -74,30 +74,30 @@ class Survey extends Component {
                                 <h2>Answer these questions as honestly as possible.</h2>
                                 <hr className="my-2" />
                                 <Form>
-                                    <QuestionForm question="Do you like being indoors?" />
-                                    {/* <QuestionForm question="Do you like being outdoors?" />
-                                    <QuestionForm question="Do you enjoy being around people?" />
-                                    <QuestionForm question="Do you enjoy interacting with people?" />
-                                    <QuestionForm question="Do you enjoy participating in sports?" />
-                                    <QuestionForm question="Do you enjoy competitition?" />
-                                    <QuestionForm question="Do you need to win?" />
-                                    <QuestionForm question="Do you like to sharpen your mind?" />
-                                    <QuestionForm question="Do you like building things?" />
-                                    <QuestionForm question="Do you like reading?" />
-                                    <QuestionForm question="Do you like solving puzzles?" />
-                                    <QuestionForm question="Do you like teaching?" />
-                                    <QuestionForm question="Do you like driving?" />
-                                    <QuestionForm question="Do you like walking?" />
-                                    <QuestionForm question="Do you enjoy crowds?" />
-                                    <QuestionForm question="Are you a technophile?" />
-                                    <QuestionForm question="Do you enjoy exercise?" />
-                                    <QuestionForm question="Do you enjoy working with your hands?" />
-                                    <QuestionForm question="Do you like to meet new people?" />
-                                    <QuestionForm question="Do you enjoy listening to music?" />
-                                    <QuestionForm question="Do you enjoy making things others would enjoy?" />
-                                    <QuestionForm question="Do you enjoy laughing at the lamentations of their women?" />
-                                    <QuestionForm question="Do you enjoy saving the world?" />
-                                    <QuestionForm question="Do you enjoy stomping their faces into the dirt?" /> */}
+                                    <QuestionForm name={"Q1"} question="Do you like being indoors?" />
+                                    <QuestionForm name={"Q2"} question="Do you like being outdoors?" />
+                                    <QuestionForm name={"Q3"} question="Do you enjoy being around people?" />
+                                    <QuestionForm name={"Q4"} question="Do you enjoy interacting with people?" />
+                                    <QuestionForm name={"Q5"} question="Do you enjoy participating in sports?" />
+                                    <QuestionForm name={"Q6"} question="Do you enjoy competitition?" />
+                                    <QuestionForm name={"Q7"} question="Do you need to win?" />
+                                    <QuestionForm name={"Q8"} question="Do you like to sharpen your mind?" />
+                                    <QuestionForm name={"Q9"} question="Do you like building things?" />
+                                    <QuestionForm name={"Q10"} question="Do you like reading?" />
+                                    <QuestionForm name={"Q11"} question="Do you like solving puzzles?" />
+                                    <QuestionForm name={"Q12"} question="Do you like teaching?" />
+                                    <QuestionForm name={"Q13"} question="Do you like driving?" />
+                                    <QuestionForm name={"Q14"} question="Do you like walking?" />
+                                    <QuestionForm name={"Q15"} question="Do you enjoy crowds?" />
+                                    <QuestionForm name={"Q16"} question="Are you a technophile?" />
+                                    <QuestionForm name={"Q17"} question="Do you enjoy exercise?" />
+                                    <QuestionForm name={"Q18"} question="Do you enjoy working with your hands?" />
+                                    <QuestionForm name={"Q19"} question="Do you like to meet new people?" />
+                                    <QuestionForm name={"Q20"} question="Do you enjoy listening to music?" />
+                                    <QuestionForm name={"Q21"} question="Do you enjoy making things others would enjoy?" />
+                                    <QuestionForm name={"Q22"} question="Do you enjoy laughing at the lamentations of their women?" />
+                                    <QuestionForm name={"Q23"} question="Do you enjoy saving the world?" />
+                                    <QuestionForm name={"Q24"} question="Do you enjoy stomping their faces into the dirt?" />
                                     <Button color="success" onClick={this.givePersonality} >Submit </Button>{' '}
                                 </Form>
                             </Jumbotron>

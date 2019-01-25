@@ -3,12 +3,12 @@ import { Container, Row, Col, Jumbotron, Button, Table } from "reactstrap";
 import Hobbies from "../../Hobbies.json";
 import { Link } from "react-router-dom";
 import MeatUp from '../..//components/meetupModal';
+import userAPI from './../../utils/api/user';
 
 require("dotenv").config();
 
 const hobbys = Hobbies.hobbies;
 let hobbyList = [];
-const APIkey = process.env.API_Key;
 let hobbylink = "";
 let groupRes = {
   name: [],
@@ -25,7 +25,7 @@ class Profile extends Component {
       user: "",
       hobbies: hobbyList,
       meetUpModal: false,
-      isOpen: false,
+      // isOpen: false,
       groupResp: groupRes
     };
   }
@@ -62,42 +62,49 @@ class Profile extends Component {
         hobbyList.push(hobby);
       }
     }
-
-    // console.log(hobbys)
-    // console.log(hobbyList);
-
+    userAPI.saveHobbies({
+      hobbies: this.state.hobbies,
+      id: this.state.user._id,
+    });
   }
 
-  toggle = () => {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
+  loadUser = () => {
+    userAPI.findUser({
+      id: this.state.user._id
+    })
+      .then(res =>
+        this.setState({ user: res.data })
+      )
+      .catch(err => console.log(err));
   }
 
   togglemeetUpModal = () => {
     this.setState({
       meetUpModal: !this.state.meetUpModal
     });
-    console.log(this)
+    // console.log(this)
   }
-  apiCall = () => {
-    let queryURL = `https://api.meetup.com/find/groups?key=${APIkey}&sign=true&photo-host=public&zip=${this.state.user.zipcode}&fallback_suggestions=true&text=${hobbylink}&radius=25.0&page=5`;
-    fetch(queryURL)
-      .then(res => res.json())
-      .then((result) => {
-        for (let i = 0; i < result.length; i++) {
-          let name = result[i].data.name
-          let link = result[i].data.link
-          let location = result[i].data.localized_location
-          let description = result[i].data.description
-          //push into the arrays in the obj groupRes
-          name.push(groupRes.name)
-          link.push(groupRes.link)
-          location.push(groupRes.location)
-          description.push(groupRes.description)
-        }
-      });
-    this.togglemeetUpModal();
+
+  apiCall = (event, hobby) => {
+    event.preventDefault();
+    const zipcode = this.state.user.zipcode;
+    const hobbyLink = hobby;
+    userAPI.getMeetUp(zipcode, hobbyLink).then((res) => {
+      console.log(res);
+      let groupArray = res.data[0];
+      // for (let i = 0; i < groupArray.length; i++) {
+      groupRes.name = groupArray.name
+      groupRes.location = groupArray.localized_location
+      groupRes.link = groupArray.link
+      groupRes.description = groupArray.description
+      console.log(groupRes);
+      console.log(this.state.groupResp);
+
+      // }
+
+      this.togglemeetUpModal();
+
+    })
   }
 
   render() {
@@ -135,7 +142,7 @@ class Profile extends Component {
                           name={hobby}>{hobby}
                         </th>
                         <th>
-                          <Button className="button" name={hobby} onClick={this.apiCall}>Open Info</Button>
+                          <Button className="button" name={hobby} onClick={(e) => this.apiCall(e, hobby)}>Open Info</Button>
                         </th>
                       </tr>
                     ))}
@@ -158,8 +165,9 @@ class Profile extends Component {
           </Row>
         </Container>
         <MeatUp
-          modal={this.state.meetupModal}
+          modal={this.state.meetUpModal}
           hobby={this.state.groupResp}
+          toggleModal={this.togglemeetUpModal}
         />
       </div>
     );
