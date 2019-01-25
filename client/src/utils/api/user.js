@@ -5,6 +5,7 @@ export default {
     loginUser: (userData) => axios.post('/api/user/login', userData),
     savePersonality: (userData) => axios.put('/api/user/personality', userData),
     saveHobbies: (userData) => axios.put('/api/user/hobbies', userData),
-
+    findUser: (userData) => axios.get('/api/user/users', userData),
+    getMeetUp: (zipcode, hobbylink) =>axios.get(`api/user/getMeetUp/${zipcode}/${hobbylink}`)
     //should the save... be a put call or a post call???
 }

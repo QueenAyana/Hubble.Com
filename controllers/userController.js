@@ -27,6 +27,12 @@ class userController {
         // res.send("auth")
     }
 
+    findUser(req,res){
+        db.User
+        .findOne({_id :req.body.id})
+        .then()
+    }
+    
     savePersonality(req, res) {
         // find user loged in by id and
         db.User
