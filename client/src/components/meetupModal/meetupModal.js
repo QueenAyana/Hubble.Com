@@ -6,6 +6,7 @@ import {
     ModalBody,
     ModalFooter,
 } from 'reactstrap';
+import Carousel from './../Carousel/Carousel';
 
 
 const MeatUp = (props) => {
@@ -15,11 +16,10 @@ const MeatUp = (props) => {
             <Modal isOpen={props.modal} toggle={props.toggleModal} className={props.className}>
                 <ModalHeader toggle={props.toggleModal}>{props.modalTitle}</ModalHeader>
                 <ModalBody>
-                    <h4>{props.hobby.name}</h4>
-                    <p>{props.hobby.link}</p>
-                    <p>{props.hobby.location}</p>
-                    <p>{props.hobby.description}</p>
-                    <hr className="my-2" />
+                    {/* {props.hobbyList.map((hobby) =>
+
+                    )} */}
+                    <Carousel hobbyList={props.hobbyList} />
                     {/* <h4>{props.hobby.name[1]}</h4>
                     <p>{props.hobby.link[1]}</p>
                     <p>{props.hobby.location[1]}</p>

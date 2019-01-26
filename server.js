@@ -5,6 +5,11 @@ const passport = require('./services/passport');
 const PORT = 3001;
 const app = express();
 
+//Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+}
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -13,7 +18,7 @@ app.use(passport.session());
 app.use(routes);
 
 
-mongoose.connect("mongodb://localhost/passportExampleDb", { useNewUrlParser: true }, function () {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/passportExampleDb", { useNewUrlParser: true }, function () {
     console.log("Mongo is connected sir!");
     app.listen(PORT, function () {
         console.log(`Our app is listening! be quite...Ostentatious ${PORT}`);
