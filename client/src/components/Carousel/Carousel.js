@@ -98,7 +98,7 @@ class Example extends Component {
                 </CarouselItem>
             );
         });
-
+// message
         return (
             <div>
                 <style>
