@@ -14,6 +14,22 @@ import SignIn from './SignInModal';
 import { FaUser } from 'react-icons/fa';
 import './NavBar.css';
 import { Link } from "react-router-dom";
+import Hobbies from "../Hobbies.json";
+
+
+const hobbys = Hobbies.hobbies;
+let hobbyList = [];
+
+for (let i = 0; i < hobbys.length; i++) {
+  if (hobbyList.length <= 24) {
+    let hobby = hobbys[Math.floor(Math.random() * hobbys.length)];
+    hobbyList.push(hobby);
+  }
+}
+
+const personalityCore = ["Adventurous", "Mellow", "Reliable", "Thoughtful", "Charismatic", "Rational", "Social"];
+const personalityAddOn = ["Action Taker", "Inventor", "Naturalist", "Visionary", "Analyzer", "Mentor", "Planner"];
+let persona = personalityCore[Math.floor(Math.random() * personalityCore.length)] + " " + personalityAddOn[Math.floor(Math.random() * personalityAddOn.length)];
 
 class NavBar extends Component {
     constructor(props) {
@@ -27,6 +43,8 @@ class NavBar extends Component {
             first_name: "",
             last_name: "",
             zipcode: "",
+            personality: "",
+            hobbies: [],
             signUpModal: false,
             signInModal: false,
             signedUp: false
@@ -48,6 +66,8 @@ class NavBar extends Component {
             first_name: "",
             last_name: "",
             zipcode: "",
+            personality: persona,
+            hobbies: hobbyList,
             signedUp: false
         });
     }
@@ -67,8 +87,8 @@ class NavBar extends Component {
         this.props.signOutUser();
     }
     signUp = () => {
-        const { username, email, password, first_name, last_name, zipcode } = this.state
-        userAPI.createUser({ username, email, password, first_name, last_name, zipcode }).then((res) => {
+        const { username, email, password, first_name, last_name, zipcode, personality, hobbies } = this.state
+        userAPI.createUser({ username, email, password, first_name, last_name, zipcode, personality, hobbies  }).then((res) => {
             this.setState({ signedUp: true });
             setTimeout(() => {
                 this.toggleSignUpModal();

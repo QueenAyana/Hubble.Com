@@ -7,8 +7,8 @@ import userAPI from './../../utils/api/user';
 
 require("dotenv").config();
 
-const hobbys = Hobbies.hobbies;
-let hobbyList = [];
+// const hobbys = Hobbies.hobbies;
+// let hobbyList = [];
 let hobbylink = "";
 let groupRes = {
   name: [],
@@ -19,20 +19,19 @@ let groupRes = {
 
 
 class Profile extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+    state = {
       user: "",
-      hobbies: hobbyList,
       meetUpModal: false,
       // isOpen: false,
       groupResp: groupRes
     };
-  }
+  
 
   componentDidMount() {
     this.getSession();
-    this.getHobbies();
+    // this.props.loadUser()
+    console.log(this.props.user)
+    // this.getHobbies();
     // this.saveSession();
   }
 
@@ -55,28 +54,29 @@ class Profile extends Component {
     }
   }
 
-  getHobbies = () => {
-    for (let i = 0; i < hobbys.length; i++) {
-      if (hobbyList.length <= 24) {
-        let hobby = hobbys[Math.floor(Math.random() * hobbys.length)];
-        hobbyList.push(hobby);
-      }
-    }
-    userAPI.saveHobbies({
-      hobbies: this.state.hobbies,
-      id: this.state.user._id,
-    });
-  }
+  // getHobbies = () => {
+  //   for (let i = 0; i < hobbys.length; i++) {
+  //     if (hobbyList.length <= 24) {
+  //       let hobby = hobbys[Math.floor(Math.random() * hobbys.length)];
+  //       hobbyList.push(hobby);
+  //     }
+  //   }
+  //   userAPI.saveHobbies({
+  //     hobbies: this.state.hobbies,
+  //     id: this.state.user._id,
+  //   });
+  // }
 
-  loadUser = () => {
-    userAPI.findUser({
-      id: this.state.user._id
-    })
-      .then(res =>
-        this.setState({ user: res.data })
-      )
-      .catch(err => console.log(err));
-  }
+  // loadUser = () => {
+  //   userAPI.findUser({
+  //     id: this.state.user._id
+  //   })
+  //     .then(res =>
+  //       this.setState({ user: res.data })
+  //     )
+  //     .catch(err => console.log(err));
+
+  // }
 
   togglemeetUpModal = () => {
     this.setState({
@@ -135,7 +135,7 @@ class Profile extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    {this.state.hobbies.map((hobby, index) => (
+                    {this.props.user.hobbies.map((hobby, index) => (
                       <tr>
                         <th
                           key={index}

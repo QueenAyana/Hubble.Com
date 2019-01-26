@@ -27,16 +27,17 @@ class userController {
         // res.send("auth")
     }
 
-    findUser(req,res){
+    findUser(req, res) {
         db.User
-        .findOne({_id :req.body.id})
-        .then()
+            .findById(req.body.id)
+            .then(results => res.json(results))
+
     }
-    
+
     savePersonality(req, res) {
         // find user loged in by id and
         db.User
-            .findOneAndUpdate({ "_id": req.body.id }, {$set: {"personality":req.body.personality}})
+            .findOneAndUpdate({ "_id": req.body.id }, { $set: { "personality": req.body.personality } })
             .then(
                 (results) => {
                     res.json(results);
@@ -49,7 +50,7 @@ class userController {
     saveHobbies(req, res) {
         // find user loged in by id and
         db.User
-            .findOneAndUpdate({ _id: req.body.id }, {$set: {"hobbies":req.body.hobbies}})
+            .findOneAndUpdate({ "_id": req.body.id }, { $set: { "hobbies": req.body.hobbies } })
             .then(
                 (results) => {
                     res.json(results);
