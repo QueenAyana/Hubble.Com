@@ -8,9 +8,9 @@ const userSchema = new Schema({
     first_name: { type: String, required: true },
     last_name: { type: String, required: true },
     email: { type: String, required: true },
-    zipcode: { type: Number, required: false },
+    zipcode: { type: Number, required: true },
     personality: { type: String, required: false },
-    hobbies: { type: String, required: false },
+    hobbies: { type: Array, required: false },
 
     
 });

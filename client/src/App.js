@@ -5,19 +5,39 @@ import { Survey } from './pages/survey';
 import { Profile } from './pages/profile';
 import NavBar from './components/NavBar';
 import LandJumbotron from './components/Landing/Jumbotron';
+import userAPI from './utils/api/user';
+import Hobbies from "./Hobbies.json";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+// const hobbys = Hobbies.hobbies;
+// let hobbyList = [];
+
+// for (let i = 0; i < hobbys.length; i++) {
+//   if (hobbyList.length <= 24) {
+//     let hobby = hobbys[Math.floor(Math.random() * hobbys.length)];
+//     hobbyList.push(hobby);
+//   }
+// }
+
+// const personalityCore = ["Adventurous", "Mellow", "Reliable", "Thoughtful", "Charismatic", "Rational", "Social"];
+// const personalityAddOn = ["Action Taker", "Inventor", "Naturalist", "Visionary", "Analyzer", "Mentor", "Planner"];
+// let persona = personalityCore[Math.floor(Math.random() * personalityCore.length)] + " " + personalityAddOn[Math.floor(Math.random() * personalityAddOn.length)];
 
 class App extends Component {
 
   state = {
     signedIn: false,
     user: null,
+    // hobbies: hobbyList,
+    // personality: persona,
   }
 
   signInUser = (user) => {
     this.setState({ signedIn: true, user });
     this.saveSession();
+    console.log(this.state.user)
+
   }
 
   signOutUser = () => {
@@ -27,7 +47,7 @@ class App extends Component {
 
   componentDidMount() {
     this.getSession();
-
+    // this.savePersonaHobby();
     window.addEventListener(
       "beforeunload",
       this.saveSession.bind(this)
@@ -55,7 +75,7 @@ class App extends Component {
         try {
           value = JSON.parse(value);
           // this.setState({ 'signedIn': value });
-          this.setState({ 'user': value });
+          this.setState({ 'user': value, 'signedIn': value });
         } catch (e) {
           // handle empty string
           this.setState({ [key]: value });
@@ -84,8 +104,8 @@ class App extends Component {
           {this.state.signedIn ?
             <Switch>
               <Route exact path="/" component={() => <HomePage user={this.state.user} />} />
-              <Route exact path="/survey" component={Survey} />
-              <Route exact path="/profile" component={() => <Profile user={this.state.user} />} />
+              <Route exact path="/survey" component={() => <Survey user={this.state.user} />}/>
+              <Route exact path="/profile" component={() => <Profile user={this.state.user}  />} />
             </Switch>
             :
             <LandJumbotron />
