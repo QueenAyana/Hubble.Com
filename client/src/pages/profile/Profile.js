@@ -23,7 +23,8 @@ class Profile extends Component {
       user: "",
       meetUpModal: false,
       // isOpen: false,
-      groupResp: groupRes
+      groupResp: groupRes,
+      hobby:[]
     };
   
 
@@ -91,6 +92,9 @@ class Profile extends Component {
     const hobbyLink = hobby;
     userAPI.getMeetUp(zipcode, hobbyLink).then((res) => {
       console.log(res);
+      this.setState({
+        hobby: res.data
+      })
       let groupArray = res.data[0];
       // for (let i = 0; i < groupArray.length; i++) {
       groupRes.name = groupArray.name
@@ -168,6 +172,7 @@ class Profile extends Component {
           modal={this.state.meetUpModal}
           hobby={this.state.groupResp}
           toggleModal={this.togglemeetUpModal}
+          hobbyList={this.state.hobby}
         />
       </div>
     );
