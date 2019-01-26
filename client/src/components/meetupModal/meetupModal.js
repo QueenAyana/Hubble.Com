@@ -13,6 +13,7 @@ const MeatUp = (props) => {
     // console.log(props)
     return (
         <div>
+            {/* hi */}
             <Modal isOpen={props.modal} toggle={props.toggleModal} className={props.className}>
                 <ModalHeader toggle={props.toggleModal}>{props.modalTitle}</ModalHeader>
                 <ModalBody>
