@@ -17,19 +17,19 @@ import Hobbies from "../Hobbies.json";
 import './NavBar.css';
 
 
-const hobbys = Hobbies.hobbies;
-let hobbyList = [];
+// const hobbys = Hobbies.hobbies;
+// let hobbyList = [];
 
-for (let i = 0; i < hobbys.length; i++) {
-  if (hobbyList.length <= 24) {
-    let hobby = hobbys[Math.floor(Math.random() * hobbys.length)];
-    hobbyList.push(hobby);
-  }
-}
+// for (let i = 0; i < hobbys.length; i++) {
+//   if (hobbyList.length <= 24) {
+//     let hobby = hobbys[Math.floor(Math.random() * hobbys.length)];
+//     hobbyList.push(hobby);
+//   }
+// }
 
-const personalityCore = ["Adventurous", "Mellow", "Reliable", "Thoughtful", "Charismatic", "Rational", "Social"];
-const personalityAddOn = ["Action Taker", "Inventor", "Naturalist", "Visionary", "Analyzer", "Mentor", "Planner"];
-let persona = personalityCore[Math.floor(Math.random() * personalityCore.length)] + " " + personalityAddOn[Math.floor(Math.random() * personalityAddOn.length)];
+// const personalityCore = ["Adventurous", "Mellow", "Reliable", "Thoughtful", "Charismatic", "Rational", "Social"];
+// const personalityAddOn = ["Action Taker", "Inventor", "Naturalist", "Visionary", "Analyzer", "Mentor", "Planner"];
+// let persona = personalityCore[Math.floor(Math.random() * personalityCore.length)] + " " + personalityAddOn[Math.floor(Math.random() * personalityAddOn.length)];
 
 class NavBar extends Component {
     constructor(props) {
@@ -67,8 +67,8 @@ class NavBar extends Component {
             first_name: "",
             last_name: "",
             zipcode: "",
-            personality: persona,
-            hobbies: hobbyList,
+            // personality: persona,
+            // hobbies: hobbyList,
             signedUp: false
         });
     }

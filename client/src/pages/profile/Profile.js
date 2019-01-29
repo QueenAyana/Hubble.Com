@@ -1,34 +1,25 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Jumbotron, Button, Table } from "reactstrap";
-import Hobbies from "../../Hobbies.json";
 import { Link } from "react-router-dom";
 import MeatUp from '../..//components/meetupModal';
 import userAPI from './../../utils/api/user';
 
 require("dotenv").config();
 
-// const hobbys = Hobbies.hobbies;
-// let hobbyList = [];
-let hobbylink = "";
-let groupRes = {
-  name: [],
-  link: [],
-  location: [],
-  description: []
-}
-
-
 class Profile extends Component {
   state = {
     user: "",
     meetUpModal: false,
     group: [],
-    hobby: ""
+    hobby: "",
+    personality:"",
+    hobbies: []
   };
 
 
   componentDidMount() {
     this.getSession();
+    this.checkUser();
     console.log(this.props.user)
     // this.getHobbies();
   }
@@ -60,6 +51,16 @@ class Profile extends Component {
     // console.log(this)
   }
 
+  checkUser = () =>{
+    const id = this.props.user._id
+    userAPI.checkUser(id).then((res) =>{
+      console.log(res.data.activeUser)
+      this.setState({
+        personality: res.data.personality,
+        hobbies: res.data.hobbies
+      })
+    })
+  }
 
   apiCall = (event, hobby) => {
     event.preventDefault();
@@ -76,7 +77,9 @@ class Profile extends Component {
 
     })
   }
-
+  editPersonality = () => {
+    userAPI.editPersonality()
+  }
   render() {
     return (
       <div>
@@ -95,7 +98,7 @@ class Profile extends Component {
           <Row>
             <Col>
               <Jumbotron>
-                <h1>{this.props.user.personality} is Who you are...</h1>
+                <h1>{this.state.personality} is Who you are...</h1>
                 <h4 >Now let's talk about what you might like to do.</h4>
                 <hr className="my-2" />
                 <p className="hobbyJmbo">Below you will find a list of Hobbies that might interest you. Just click on</p>
@@ -108,7 +111,7 @@ class Profile extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    {this.props.user.hobbies.map((hobby, index) => (
+                    {this.state.hobbies.map((hobby, index) => (
                       <tr>
                         <th
                           key={index}

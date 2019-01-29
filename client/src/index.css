@@ -117,7 +117,9 @@ code {
   color: #131313 !important;
 }
 
-
+.carousel-indicators {
+  position: relative !important;
+}
 
 .picture{
   position: "relative";
