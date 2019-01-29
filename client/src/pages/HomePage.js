@@ -3,20 +3,30 @@ import Footer from '../components/Landing/Footer';
 import { Container, Row, Col, Jumbotron } from "reactstrap";
 import { Redirect } from "react-router-dom"
 import { Spinner } from 'reactstrap';
+import userAPI from '../utils/api/user';
 
 
 class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      timer: 5
+      timer: 5,
+      activeUser: false
     };
   }
   componentDidMount = () => {
-    let timeout = setInterval(this.timer, 1000)
+    let timeout = setInterval(this.timer, 1000);
+    this.checkUser();
   }
 
-  componentWillUnmount = () => {
+  checkUser = () =>{
+    const id = this.props.user._id
+    userAPI.checkUser(id).then((res) =>{
+      console.log(res.data.activeUser)
+      this.setState({
+        activeUser: res.data.activeUser
+      })
+    })
   }
 
   timer = () => {
@@ -33,6 +43,9 @@ class HomePage extends Component {
   render() {
     if (this.state.timer === 0) {
       this.setState({ timer: 5 })
+      if (this.state.activeUser === true) {
+        return <Redirect to='/profile'/>
+      }
       return <Redirect to='/survey' />
     }
     return (

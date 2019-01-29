@@ -29,11 +29,10 @@ class Profile extends Component {
 
   componentDidMount() {
     this.getSession();
-    // this.props.loadUser()
     console.log(this.props.user)
     // this.getHobbies();
-    // this.saveSession();
   }
+
 
   getSession = () => {
     // Get saved data from localStorage
@@ -61,6 +60,7 @@ class Profile extends Component {
     // console.log(this)
   }
 
+
   apiCall = (event, hobby) => {
     event.preventDefault();
     const zipcode = this.state.user.zipcode;
@@ -71,7 +71,7 @@ class Profile extends Component {
         group: res.data,
         hobby: hobby
       })
-      
+
       this.togglemeetUpModal();
 
     })

@@ -23,8 +23,12 @@ router
     .put(userController.saveHobbies)
 
 router
+    .route("/activateUser")
+    .put(userController.activateUser)
+    
+router
     .route("/users")
-    .get(userController.findUser)
+    .get(userController.checkUser)
 
 router
     .route("/getMeetUp/:zipcode/:hobbylink")

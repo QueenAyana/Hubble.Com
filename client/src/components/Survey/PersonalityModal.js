@@ -21,7 +21,7 @@ const Persona = (props) =>
             </ModalBody>
             <ModalFooter>
                 <Link to="/profile">
-                    <Button className="button">To Your Profile</Button>
+                    <Button onClick={props.activateUser} className="button">To Your Profile</Button>
                 </Link>
             </ModalFooter>
         </Modal>
