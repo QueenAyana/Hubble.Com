@@ -16,7 +16,7 @@ router
 
 router
     .route("/personality")
-    .put(userController.savePersonality)
+    .put(userController.editPersonality)
 
 router
     .route("/hobbies")

@@ -3,28 +3,28 @@ import QuestionForm from "../../components/Questions";
 import userAPI from '../../utils/api/user';
 import { Button, Container, Row, Col, Jumbotron, Form } from "reactstrap";
 import Persona from '../../components/Survey';
-// import Hobbies from "../../Hobbies.json";
+import Hobbies from "../../Hobbies.json";
 
-// const hobbys = Hobbies.hobbies;
-// let hobbyList = [];
+const hobbys = Hobbies.hobbies;
+let hobbyList = [];
 
-// for (let i = 0; i < hobbys.length; i++) {
-//     if (hobbyList.length <= 24) {
-//         let hobby = hobbys[Math.floor(Math.random() * hobbys.length)];
-//         hobbyList.push(hobby);
-//     }
-// }
+for (let i = 0; i < hobbys.length; i++) {
+    if (hobbyList.length <= 24) {
+        let hobby = hobbys[Math.floor(Math.random() * hobbys.length)];
+        hobbyList.push(hobby);
+    }
+}
 
-// const personalityCore = ["Adventurous", "Mellow", "Reliable", "Thoughtful", "Charismatic", "Rational", "Social"];
-// const personalityAddOn = ["Action Taker", "Inventor", "Naturalist", "Visionary", "Analyzer", "Mentor", "Planner"];
-// let persona = personalityCore[Math.floor(Math.random() * personalityCore.length)] + " " + personalityAddOn[Math.floor(Math.random() * personalityAddOn.length)];
+const personalityCore = ["Adventurous", "Mellow", "Reliable", "Thoughtful", "Charismatic", "Rational", "Social"];
+const personalityAddOn = ["Action Taker", "Inventor", "Naturalist", "Visionary", "Analyzer", "Mentor", "Planner"];
+let persona = personalityCore[Math.floor(Math.random() * personalityCore.length)] + " " + personalityAddOn[Math.floor(Math.random() * personalityAddOn.length)];
 
 class Survey extends Component {
     
     state = {
         user: "",
-        // hobbies: hobbyList,
-        // personality: persona,
+        hobbies: hobbyList,
+        personality: persona,
         personaModal: false,
     };
 
@@ -47,7 +47,6 @@ class Survey extends Component {
         }
     }
 
-
     componentDidMount() {
         this.getSession();
         console.log(this.props.user)
@@ -57,32 +56,13 @@ class Survey extends Component {
     activateUser = () => {
         userAPI.activateUser({
             activeUser: true,
+            personality: this.state.personality,
+            hobbies: this.state.hobbies,
             id: this.props.user._id,
         });
         this.togglePersonaModal();
     }
 
-
-    // givePersonality = (event) => {
-    //     event.preventDefault();
-    //     console.log(persona);
-    //     console.log(this.state.user._id);
-    //     userAPI.savePersonality({
-    //         personality: this.state.personality,
-    //         id: this.state.user._id,
-    //     });
-    //     userAPI.saveHobbies({
-    //         hobbies: this.state.hobbies,
-    //         id: this.state.user._id,
-    //     });
-    //     this.togglePersonaModal();
-    // }
-
-    // toggle = () => {
-    //     this.setState({
-    //         isOpen: !this.state.isOpen
-    //     });
-    // }
     togglePersonaModal = () => {
         this.setState({
             personaModal: !this.state.personaModal
@@ -131,7 +111,7 @@ class Survey extends Component {
                 </Container>
                 <Persona
                     modal={this.state.personaModal}
-                    personality={this.props.user.personality}
+                    personality={this.state.personality}
                 />
             </div>
         );

@@ -29,7 +29,7 @@ class userController {
     //called on survey page
     activateUser(req, res) {
         db.User
-            .findOneAndUpdate({ "_id" : req.body.id }, { $set: { "activeUser": req.body.activeUser } })
+            .findOneAndUpdate({ "_id" : req.body.id }, { $set: { "activeUser": req.body.activeUser, "personality": req.body.personality, "hobbies":req.body.hobbies } })
             .then(
                 (results) => {
                     res.json(results);
@@ -46,10 +46,10 @@ class userController {
             })
     }
 
-    savePersonality(req, res) {
+    editPersonality(req, res) {
         // find user loged in by id and
         db.User
-            .findOneAndUpdate({ "_id": req.body.id }, { $set: { "personality": req.body.personality } })
+            .findOneAndUpdate({ "_id": req.body.id }, { $set: { "personality": req.body.personality, "hobbies":req.body.hobbies } })
             .then(
                 (results) => {
                     res.json(results);
