@@ -19,14 +19,13 @@ let groupRes = {
 
 
 class Profile extends Component {
-    state = {
-      user: "",
-      meetUpModal: false,
-      // isOpen: false,
-      groupResp: groupRes,
-      hobby:[]
-    };
-  
+  state = {
+    user: "",
+    meetUpModal: false,
+    group: [],
+    hobby: ""
+  };
+
 
   componentDidMount() {
     this.getSession();
@@ -55,30 +54,6 @@ class Profile extends Component {
     }
   }
 
-  // getHobbies = () => {
-  //   for (let i = 0; i < hobbys.length; i++) {
-  //     if (hobbyList.length <= 24) {
-  //       let hobby = hobbys[Math.floor(Math.random() * hobbys.length)];
-  //       hobbyList.push(hobby);
-  //     }
-  //   }
-  //   userAPI.saveHobbies({
-  //     hobbies: this.state.hobbies,
-  //     id: this.state.user._id,
-  //   });
-  // }
-
-  // loadUser = () => {
-  //   userAPI.findUser({
-  //     id: this.state.user._id
-  //   })
-  //     .then(res =>
-  //       this.setState({ user: res.data })
-  //     )
-  //     .catch(err => console.log(err));
-
-  // }
-
   togglemeetUpModal = () => {
     this.setState({
       meetUpModal: !this.state.meetUpModal
@@ -93,19 +68,10 @@ class Profile extends Component {
     userAPI.getMeetUp(zipcode, hobbyLink).then((res) => {
       console.log(res);
       this.setState({
-        hobby: res.data
+        group: res.data,
+        hobby: hobby
       })
-      let groupArray = res.data[0];
-      // for (let i = 0; i < groupArray.length; i++) {
-      groupRes.name = groupArray.name
-      groupRes.location = groupArray.localized_location
-      groupRes.link = groupArray.link
-      groupRes.description = groupArray.description
-      console.log(groupRes);
-      console.log(this.state.groupResp);
-
-      // }
-
+      
       this.togglemeetUpModal();
 
     })
@@ -117,11 +83,12 @@ class Profile extends Component {
         <Container>
           <Row>
             <Col>
-              <Jumbotron>
+              <Jumbotron className="spinJumbo">
                 <h1 className="display-3">Hello, {this.props.user.first_name}</h1>
                 <h4 className="hobbyJmbo">Welcome to your new Hubble page.</h4>
                 <hr className="my-2" />
-                <p className="hobbyJmb">This your Home page where you can access your Personality info and manage your Hobby list.</p>
+                <h5 className="hobbyJmb">This your Home page where you can access your</h5>
+                <h5 className="hobbyJmb">Personality and manage your Hobby list.</h5>
               </Jumbotron>
             </Col>
           </Row>
@@ -129,13 +96,15 @@ class Profile extends Component {
             <Col>
               <Jumbotron>
                 <h1>{this.props.user.personality} is Who you are...</h1>
-                <h4 className="hobbyJmbo">Now let's talk about what you might like to do.</h4>
+                <h4 >Now let's talk about what you might like to do.</h4>
                 <hr className="my-2" />
+                <p className="hobbyJmbo">Below you will find a list of Hobbies that might interest you. Just click on</p>
+                <p className="hobbyJmbo">the buttons to see some groups related to the hobby from Meetup.com in your area.</p>
                 <Table>
                   <thead>
                     <tr>
                       <th>Your Hobbies</th>
-                      <th>Meetup Info.</th>
+                      <th>Meetup.com Groups</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -146,33 +115,25 @@ class Profile extends Component {
                           name={hobby}>{hobby}
                         </th>
                         <th>
-                          <Button className="button" name={hobby} onClick={(e) => this.apiCall(e, hobby)}>Open Info</Button>
+                          <Button className="button2" name={hobby} onClick={(e) => this.apiCall(e, hobby)}>Open Info.</Button>
                         </th>
                       </tr>
                     ))}
                   </tbody>
                 </Table>
-              </Jumbotron>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Jumbotron>
+                <hr className="my-2" />
                 <Link to={"/survey"}>
-                  <Button className="button">Take the Survey Again?</Button>
+                  <Button className="button3">Take the Survey Again?</Button>
                 </Link>
-                {/* <Link to={"/profile"}>
-                <Button className="button">Go to Your Page!</Button>
-              </Link> */}
               </Jumbotron>
             </Col>
           </Row>
         </Container>
         <MeatUp
           modal={this.state.meetUpModal}
-          hobby={this.state.groupResp}
+          hobby={this.state.hobby}
           toggleModal={this.togglemeetUpModal}
-          hobbyList={this.state.hobby}
+          groupList={this.state.group}
         />
       </div>
     );
