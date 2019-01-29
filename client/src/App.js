@@ -4,7 +4,6 @@ import { HomePage } from './pages';
 import { Survey } from './pages/survey';
 import { Profile } from './pages/profile';
 import NavBar from './components/NavBar';
-import Footer from './components/Landing/Footer';
 import LandJumbotron from './components/Landing/Jumbotron';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';

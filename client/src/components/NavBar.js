@@ -47,7 +47,8 @@ class NavBar extends Component {
             hobbies: [],
             signUpModal: false,
             signInModal: false,
-            signedUp: false
+            signedUp: false,
+            activeUser: false
         };
     }
     toggleSignInModal = () => {
@@ -87,8 +88,8 @@ class NavBar extends Component {
         this.props.signOutUser();
     }
     signUp = () => {
-        const { username, email, password, first_name, last_name, zipcode, personality, hobbies } = this.state
-        userAPI.createUser({ username, email, password, first_name, last_name, zipcode, personality, hobbies  }).then((res) => {
+        const { username, email, password, first_name, last_name, zipcode, personality, hobbies, activeUser } = this.state
+        userAPI.createUser({ username, email, password, first_name, last_name, zipcode, personality, hobbies, activeUser  }).then((res) => {
             this.setState({ signedUp: true });
             setTimeout(() => {
                 this.toggleSignUpModal();

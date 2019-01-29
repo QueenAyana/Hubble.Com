@@ -11,6 +11,7 @@ const userSchema = new Schema({
     zipcode: { type: Number, required: true },
     personality: { type: String, required: false },
     hobbies: { type: Array, required: false },
+    activeUser: { type: Boolean, required: false },
 
     
 });

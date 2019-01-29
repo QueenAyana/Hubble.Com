@@ -20,7 +20,7 @@ import Persona from '../../components/Survey';
 // let persona = personalityCore[Math.floor(Math.random() * personalityCore.length)] + " " + personalityAddOn[Math.floor(Math.random() * personalityAddOn.length)];
 
 class Survey extends Component {
-
+    
     state = {
         user: "",
         // hobbies: hobbyList,
@@ -53,6 +53,15 @@ class Survey extends Component {
         console.log(this.props.user)
 
     }
+
+    activateUser = () => {
+        userAPI.activateUser({
+            activeUser: true,
+            id: this.props.user._id,
+        });
+        this.togglePersonaModal();
+    }
+
 
     // givePersonality = (event) => {
     //     event.preventDefault();
@@ -114,7 +123,7 @@ class Survey extends Component {
                                     <QuestionForm name={"Q22"} question="Do you enjoy laughing at the lamentations of their women?" />
                                     <QuestionForm name={"Q23"} question="Do you enjoy saving the world?" />
                                     <QuestionForm name={"Q24"} question="Do you enjoy stomping their faces into the dirt?" />
-                                    <Button color="success" onClick={this.togglePersonaModal} >Submit </Button>{' '}
+                                    <Button color="success" onClick={this.activateUser} >Submit </Button>{' '}
                                 </Form>
                             </Jumbotron>
                         </Col>
