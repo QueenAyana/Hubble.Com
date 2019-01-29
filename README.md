@@ -4,7 +4,7 @@
 
 ## About Us.
 
-Hubble.com is a React.js based application designed to help people find hobbies based on their "personality". We created a series of questions for the user to answer. After the survey is taken we assign the user a personality and a list of hobbies that are most likely to be of interest to them. We also have implemented the use of Meetup.com's API to help the user find groups or events related to the hobbies they matched with.If there are no groups related to their hobbies, then a set of recomended groups will be shown.
+Hubble.com is a React.js based application designed to help people find hobbies based on their "personality". We created a series of questions for the user to answer. After the survey is taken we assign the user a personality and a list of hobbies that are most likely to be of interest to them. We also have implemented the use of Meetup.com's API to help the user find groups or events related to the hobbies they matched with. If there are no groups related to their hobbies, then a set of recomended groups will be shown. You as the user can if you wish retake the survey and reset your results.
 
 ## Developers:
 - [Amber Brune](https://github.com/QueenAyana)
@@ -44,3 +44,7 @@ To install the application locally:
 - React NPM Package ~ https://www.npmjs.com/package/react
 - React-Dom NPM Package ~ https://www.npmjs.com/search?q=react-dom
 - React-Router NPM Package ~ https://www.npmjs.com/package/react-router
+
+## Credits
+
+Full-Stack Flex Coding Bootcamp @ UCLA Extension
