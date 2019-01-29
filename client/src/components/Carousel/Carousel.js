@@ -56,13 +56,13 @@ class Example extends Component {
 
     next() {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === this.props.hobbyList.length - 1 ? 0 : this.state.activeIndex + 1;
+        const nextIndex = this.state.activeIndex === this.props.groupList.length - 1 ? 0 : this.state.activeIndex + 1;
         this.setState({ activeIndex: nextIndex });
     }
 
     previous() {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === 0 ? this.props.hobbyList.length - 1 : this.state.activeIndex - 1;
+        const nextIndex = this.state.activeIndex === 0 ? this.props.groupList.length - 1 : this.state.activeIndex - 1;
         this.setState({ activeIndex: nextIndex });
     }
 
@@ -74,10 +74,9 @@ class Example extends Component {
     render() {
         const { activeIndex } = this.state;
 
-        const slides = this.props.hobbyList.map((hobby, id) => {
+        const slides = this.props.groupList.map((group, id) => {
             return (
                 <CarouselItem
-                    className="custom-tag"
                     tag="div"
                     key={id}
                     onExiting={this.onExiting}
@@ -85,15 +84,15 @@ class Example extends Component {
                 >
 
                     {
-                        hobby.key_photo ?
-                        <img className="picture" src={hobby.key_photo.photo_link} />
+                        group.key_photo ?
+                        <img className="picture" src={group.key_photo.photo_link} />
                         : null
                     }
 
-                        <h4>{hobby.name}</h4>
-                        <a href={hobby.link} target="_blank" rel="noopener noreferrer">{hobby.link}</a>
-                        <p>{hobby.localized_location}</p>
-                        <p dangerouslySetInnerHTML={{ __html: hobby.description }}></p>
+                        <h4>{group.name}</h4>
+                        <a href={group.link} target="_blank" rel="noopener noreferrer">{group.link}</a>
+                        <p>{group.localized_location}</p>
+                        <p dangerouslySetInnerHTML={{ __html: group.description }}></p>
                  
                 </CarouselItem>
             );
@@ -101,20 +100,13 @@ class Example extends Component {
 // message
         return (
             <div>
-                <style>
-                    {
-                        `.custom-tag {
-                max-width: 100%;
-                height: 500px;
-              }`
-                    }
-                </style>
                 <Carousel
+                    className="custom-tag"
                     activeIndex={activeIndex}
                     next={this.next}
                     previous={this.previous}
                 >
-                    <CarouselIndicators items={this.props.hobbyList} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                    <CarouselIndicators items={this.props.groupList} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
                     {slides}
                     <CarouselControl className="carouselControl" direction="prev" directionText="Previous" onClickHandler={this.previous} />
                     <CarouselControl className="carouselControl" direction="next" directionText="Next" onClickHandler={this.next} />

@@ -12,9 +12,9 @@ import {
 import SignUp from './SignUpModal';
 import SignIn from './SignInModal';
 import { FaUser } from 'react-icons/fa';
-import './NavBar.css';
 import { Link } from "react-router-dom";
 import Hobbies from "../Hobbies.json";
+import './NavBar.css';
 
 
 const hobbys = Hobbies.hobbies;

@@ -11,61 +11,50 @@ import {
 let items = [
   {
     id: 1,
-    altText: 'Slide 1',
-    name: [],
-    link: [],
-    location: [],
-    description: []
+    title: "Archery",
+    src: "https://www.quia.com/files/quia/users/sylben/Hobbies/archery.png"
 
   },
   {
     id: 2,
-    altText: 'Slide 2',
-    name: [],
-    link: [],
-    location: [],
-    description: []
+    title: "Baseball",
+    src: "https://www.quia.com/files/quia/users/sylben/Hobbies/baseball.png"
   },
   {
     id: 3,
-    altText: 'Slide 3',
-    name: [],
-    link: [],
-    location: [],
-    description: []
+    title: "Biking",
+    src: "https://www.quia.com/files/quia/users/sylben/Hobbies/bike.png"
   },
   {
     id: 4,
-    altText: 'Slide 4',
-    name: [],
-    link: [],
-    location: [],
-    description: []
+    title: "Climbing",
+    src: "https://www.quia.com/files/quia/users/sylben/Hobbies/climbing.png"
   },
   {
     id: 5,
-    altText: 'Slide 5',
-    name: [],
-    link: [],
-    location: [],
-    description: []
+    title: "Diving",
+    src: "https://www.quia.com/files/quia/users/sylben/Hobbies/diving.png"
+  },
+  {
+    id: 6,
+    title: "Horseback Riding",
+    src: "https://www.quia.com/files/quia/users/sylben/Hobbies/horseriding.png"
+  },
+  {
+    id: 7,
+    title: "Inline Rollerskating",
+    src: "https://www.quia.com/files/quia/users/sylben/Hobbies/roller-skates.png"
   },
 
 ];
 
 
 
-class GroupCarousel extends Component {
+class ImageCarousel extends Component {
   constructor(props) {
     super(props);
     this.state = {
       activeIndex: 0,
-      groupStuff: {
-        name: this.props.hobby.name,
-        link: this.props.hobby.link,
-        location: this.props.hobby.location,
-        description: this.props.hobby.description
-      }
     };
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
@@ -73,29 +62,8 @@ class GroupCarousel extends Component {
     this.onExiting = this.onExiting.bind(this);
     this.onExited = this.onExited.bind(this);
 
-    // items.forEach(element => {
-    //   element.name = this.props.hobby.name
-    //   element.link = this.props.hobby.link
-    //   element.location = this.props.hobby.location
-    //   element.description = this.props.hobby.description
-    // });
   }
 
-  componentDidMount() {
-    for (let i = 0; i < this.state.groupStuff.name.length; i++) {
-      items.forEach(element => {
-        element.name = this.state.groupStuff.name[i]
-      });
-
-    }
-    for (let i = 0; i < this.state.groupStuff.link.length; i++) {
-      items.forEach(element => {
-        element.link[i]=this.state.groupStuff.link[i]
-      });
-
-    }
-
-  }
 
   onExiting() {
     this.animating = true;
@@ -126,32 +94,25 @@ class GroupCarousel extends Component {
     const { activeIndex } = this.state;
 
 
-    const slides = items.map((group) => {
+    const slides = items.map((item) => {
       return (
         <CarouselItem
-          className="custom-tag"
           tag="div"
-          key={group.id}
-          group={group}
+          key={item.src}
           onExiting={this.onExiting}
           onExited={this.onExited}
         >
-          <CarouselCaption className="text-danger" captionHeader={group.name} captionText={group.link} />
+          <img src={item.src} />
+          <h3>{item.title}</h3>
+          <br />
         </CarouselItem>
       );
     });
 
     return (
       <div>
-        <style>
-          {
-            `.custom-tag {
-                max-width: 100%;
-                height: 500px;
-              }`
-          }
-        </style>
         <Carousel
+          className="imageCarousel"
           activeIndex={activeIndex}
           next={this.next}
           previous={this.previous}
@@ -161,9 +122,9 @@ class GroupCarousel extends Component {
           <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
           <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
         </Carousel>
-      </div>
+      </div >
     );
   }
 }
 
-export default GroupCarousel;
+export default ImageCarousel;
