@@ -32,7 +32,7 @@ To install the application locally:
 
 ## Tech used:
 - React ~ JavaScript library for building user interfaces
-* Bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+- Bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 - ES6 ~ EcmaScript 6 standardized scripting language
 - Bootstrap CDN ~ Front-end framework
 - CSS ~ Custom stylesheet
