@@ -48,3 +48,12 @@ To install the application locally:
 ## Credits
 
 Full-Stack Flex Coding Bootcamp @ UCLA Extension
+
+
+![Hubble1](/client/public/main.jpg)
+![Hubble2](/client/public/signup.jpg)
+![Hubble3](/client/public/login.jpg)
+![Hubble4](/client/public/loginevent.jpg)
+![Hubble5](/client/public/survey.jpg)
+![Hubble6](/client/public/profile.jpg)
+![Hubble7](/client/public/hobbies.jpg)
