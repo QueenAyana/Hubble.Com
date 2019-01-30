@@ -28,7 +28,7 @@ To install the application locally:
 - `yarn start`
 
 3. You will need to create a ".env" file with the following inside
-  API_Key = "your API Key from Meetup.com"
+  - API_Key = "your API Key from Meetup.com"
   - *all it takes to get one is have an accout on the site. (link in credits)*
 
 4. The application will now be available to view in the browser at  `http://localhost:3000/`            
