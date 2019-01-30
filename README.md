@@ -30,7 +30,8 @@ To install the application locally:
 3. In your bash terminal:
 - Start the MongoDB server: `mongod`
 
-4. Then in a new bash terminal `cd` into the repository and execute the following:  
+4. Then, in a new bash terminal `cd` into the repository and execute the following: 
+- `yarn install`
 - `yarn start`
 
 5. The application will now be available to view in the browser at  `http://localhost:3000/`            
