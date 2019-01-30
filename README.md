@@ -23,15 +23,17 @@ To install the application locally:
 1. Clone this repository to your local machine:
 - `https://github.com/QueenAyana/Hubble.Com`
 
-2. `cd` into the repository and execute the following in the bash terminal:
+2. You will need to create a ".env" file with the following inside
+  - `API_Key = "your API Key from Meetup.com"`
+  - *all it takes to get one is have an accout on the site. (link in credits)*
+  
+3. In your bash terminal:
 - Start the MongoDB server: `mongod`
+
+4. Then in a new bash terminal `cd` into the repository and execute the following:  
 - `yarn start`
 
-3. You will need to create a ".env" file with the following inside
-  - API_Key = "your API Key from Meetup.com"
-  - *all it takes to get one is have an accout on the site. (link in credits)*
-
-4. The application will now be available to view in the browser at  `http://localhost:3000/`            
+5. The application will now be available to view in the browser at  `http://localhost:3000/`            
 
 
 ## Tech used:
