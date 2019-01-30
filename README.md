@@ -25,7 +25,7 @@ To install the application locally:
 
 2. You will need to create a ".env" file with the following inside
   - `API_Key = "your API Key from Meetup.com"`
-  - *all it takes to get one is have an accout on the site. (link in credits)*
+      *all it takes to get one is have an accout on Meetup.com. (link in credits)*
   
 3. In your bash terminal:
 - Start the MongoDB server: `mongod`
