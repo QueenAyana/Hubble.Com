@@ -48,8 +48,10 @@ To install the application locally:
 ## Credits
 
 Full-Stack Flex Coding Bootcamp @ UCLA Extension
+[Meetup.com API Docs](https://secure.meetup.com/meetup_api)
+[Meetup.com](https://www.meetup.com/)
 
-
+## Screenshots
 ![Hubble1](/client/public/main.jpg)
 ![Hubble2](/client/public/signup.jpg)
 ![Hubble3](/client/public/login.jpg)
